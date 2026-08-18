@@ -11,7 +11,7 @@ export const DigitalShop: React.FC = () => {
       title: 'Template Web "Luxe & Editorial"',
       category: 'Templates Web',
       type: 'templates',
-      price: '29€',
+      price: 'Dispo par Email',
       description: 'Template Figma & React moderne et épuré idéal pour portfolios, studios et marques d\'exception.',
       features: ['Compatible Figma & React', '100% Responsive & Animations', 'Documentation & composants UI'],
       badge: 'Best-Seller'
@@ -21,7 +21,7 @@ export const DigitalShop: React.FC = () => {
       title: 'Template Web "Gastronomie & Resto"',
       category: 'Templates Web',
       type: 'templates',
-      price: '25€',
+      price: 'Dispo par Email',
       description: 'Maquette web clé en main avec module de réservation et menu interactif pour restaurants.',
       features: ['Figma & Code React', 'Système de réservation UI', 'Kit de couleurs & typographies'],
       badge: 'Populaire'
@@ -31,7 +31,7 @@ export const DigitalShop: React.FC = () => {
       title: 'Ebook "Créer un Site Qui Marque"',
       category: 'Ebooks & Guides',
       type: 'ebooks',
-      price: '19€',
+      price: 'Dispo par Email',
       description: 'Guide pratique étape par étape pour concevoir des sites internet attractifs sans fautes de goût.',
       features: ['Format PDF & EPUB 120 pages', 'Secret des palettes & grilles', 'Études de cas réels'],
       badge: 'Nouveau'
@@ -41,7 +41,7 @@ export const DigitalShop: React.FC = () => {
       title: 'Ebook "Masterclass Affiches Publicitaires"',
       category: 'Ebooks & Guides',
       type: 'ebooks',
-      price: '15€',
+      price: 'Dispo par Email',
       description: 'Le guide complet pour réussir la composition et la typographie de vos affiches publicitaires.',
       features: ['Format PDF HD', 'Conseils mise en page & couleurs', '5 Templates Figma d\'affiches offerts'],
       badge: 'Essentiel'
@@ -119,7 +119,7 @@ export const DigitalShop: React.FC = () => {
                   <span className="px-3 py-1 rounded-full bg-[#E11D48]/10 text-[#E11D48] text-[11px] font-mono font-bold">
                     {product.category}
                   </span>
-                  <span className="text-xl font-display font-extrabold text-[#0F172A] bg-zinc-100 px-3 py-1 rounded-xl">
+                  <span className="text-xs font-mono font-bold text-[#E11D48] bg-rose-50 px-3 py-1 rounded-xl border border-rose-200">
                     {product.price}
                   </span>
                 </div>
@@ -142,17 +142,17 @@ export const DigitalShop: React.FC = () => {
                 </div>
               </div>
 
-              <button
+              <a
+                href="#contact"
                 onClick={() => {
                   soundFx.playClick();
-                  alert(`Téléchargement de ${product.title} (${product.price}) initialisé ! Contactez Elena pour débloquer votre accès.`);
                 }}
                 onMouseEnter={() => soundFx.playHover()}
                 className="w-full py-3.5 rounded-2xl bg-[#0F172A] text-white font-display font-extrabold text-xs uppercase tracking-wider hover:bg-[#E11D48] transition-all flex items-center justify-center gap-2 shadow-md"
               >
-                <span>Commander ({product.price})</span>
+                <span>Obtenir par Email</span>
                 <Download className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           ))}
         </div>

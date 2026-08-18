@@ -9,8 +9,8 @@ export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'Création de Site Internet',
-    budget: '150€ – 300€',
+    service: 'Création de Site Internet Sur-Mesure',
+    budget: 'Demande de Devis Personnalisé par Email',
     message: '',
   });
 
@@ -244,28 +244,29 @@ export const Contact: React.FC = () => {
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="w-full px-5 py-4 rounded-2xl bg-zinc-50 border border-zinc-200 text-[#0F172A] focus:outline-none focus:border-[#E11D48] transition-colors text-sm font-mono"
                       >
-                        <option>Création de Site Internet (dès 150€)</option>
+                        <option>Création de Site Internet Sur-Mesure</option>
                         <option>Design de Site Internet (UI/UX Figma)</option>
-                        <option>Conception d'Affiches Publicitaires (15€)</option>
-                        <option>Identité Visuelle & Branding</option>
+                        <option>Conception d'Affiches Publicitaires</option>
+                        <option>Identité Visuelle & Branding Global</option>
+                        <option>Templates Web & Ebooks</option>
                       </select>
                     </div>
 
-                    {/* Budget starting at 150€ */}
+                    {/* Project scope / quote request */}
                     <div className="space-y-2">
                       <label className="text-xs font-mono text-zinc-700 uppercase tracking-wider block font-bold">
-                        Budget Estimé
+                        Type de Projet & Devis
                       </label>
                       <select
                         value={formData.budget}
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                         className="w-full px-5 py-4 rounded-2xl bg-zinc-50 border border-zinc-200 text-[#0F172A] focus:outline-none focus:border-[#E11D48] transition-colors text-sm font-mono font-bold text-[#E11D48]"
                       >
-                        <option>15€ (Conception d'Affiche Publicitaire)</option>
-                        <option>150€ – 300€ (Offre Accessible Site)</option>
-                        <option>300€ – 600€ (Site Sur-Mesure)</option>
-                        <option>600€ – 1200€ (Site Immersif & Affiches)</option>
-                        <option>1200€ + (Projet Global & Branding)</option>
+                        <option>Demande de Devis Personnalisé par Email</option>
+                        <option>Affiche Publicitaire Sur-Mesure</option>
+                        <option>Site Vitrine / Portfolio Professionnel</option>
+                        <option>Site E-Commerce / Boutique en Ligne</option>
+                        <option>Projet Complet (Site Web + Affiches)</option>
                       </select>
                     </div>
                   </div>

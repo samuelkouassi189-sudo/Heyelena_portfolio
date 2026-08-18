@@ -6,17 +6,17 @@ export const About: React.FC = () => {
   const [activePhoto, setActivePhoto] = useState(0);
 
   const photos = [
-    { url: '/images/elena_asset_1.webp', label: 'Elena Smith — Studio & Remote Work' },
-    { url: '/images/elena_asset_8.webp', label: 'Design de Sites Web & UI/UX' },
-    { url: '/images/elena_asset_11.webp', label: 'Conception d\'Affiches Publicitaires (15€)' },
-    { url: '/images/elena_asset_4.webp', label: 'Vente de Templates Web & Ebooks' },
+    { url: '/images/elena_asset_1.webp', label: 'Elena Smith — Studio & Direction Artistique' },
+    { url: '/images/elena_asset_8.webp', label: 'Design de Sites Web & Interfaces UI/UX' },
+    { url: '/images/elena_asset_11.webp', label: 'Conception d\'Affiches Publicitaires Sur-Mesure' },
+    { url: '/images/elena_asset_4.webp', label: 'Création de Templates Web & Ebooks' },
   ];
 
   const skills = [
-    { name: 'Création de Sites Internet (dès 150€)', desc: 'Sites vitrines & sur-mesure modernes et ultra-fluides', icon: Code2, color: '#E11D48' },
-    { name: 'Design de Sites Internet (UI/UX)', desc: 'Maquettes Figma, direction artistique & ergonomie', icon: Palette, color: '#8B5CF6' },
-    { name: 'Affiches Publicitaires (15€ SEULEMENT)', desc: 'Conception visuelle haute définition pour seulement 15€', icon: Sparkles, color: '#F43F5E' },
-    { name: 'Vente de Templates Web & Ebooks', desc: 'Templates prêt-à-l\'emploi & guides pratiques design', icon: ShoppingBag, color: '#F59E0B' },
+    { name: 'Création de Sites Internet Sur-Mesure', desc: 'Sites vitrines & plateformes web modernes, fluides et élégantes', icon: Code2, color: '#E11D48' },
+    { name: 'Design de Sites Internet (UI/UX)', desc: 'Maquettes Figma, direction artistique & ergonomie sur-mesure', icon: Palette, color: '#8B5CF6' },
+    { name: 'Conception d\'Affiches Publicitaires', desc: 'Visuels haute définition à fort impact pour marques et événements', icon: Sparkles, color: '#F43F5E' },
+    { name: 'Vente de Templates Web & Ebooks', desc: 'Ressources prêt-à-l\'emploi & guides pratiques design', icon: ShoppingBag, color: '#F59E0B' },
   ];
 
   return (
@@ -30,8 +30,8 @@ export const About: React.FC = () => {
               <span>01. À PROPOS DE MOI</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-extrabold text-[#0F172A] tracking-tight">
-              SITES INTERNET, AFFICHES (15€) <br />
-              <span className="text-gradient-rose">& BOUTIQUE DE TEMPLATES / EBOOKS</span>
+              SITES INTERNET, AFFICHES PUBLICITAIRES <br />
+              <span className="text-gradient-rose">& RESSOURCES DIGITALES</span>
             </h2>
           </div>
 
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
               <span>TRAVAIL 100% À DISTANCE</span>
             </div>
             <p className="text-xs font-mono text-zinc-700">
-              « Je collabore à distance avec des clients du monde entier. N'hésitez pas à me contacter pour vos sites ou vos affiches à 15€ ! »
+              « Je collabore à distance avec des clients du monde entier. Écrivez-moi par email pour discuter de vos projets ! »
             </p>
           </div>
         </div>
@@ -65,7 +65,7 @@ export const About: React.FC = () => {
                   <p className="text-xs font-mono text-[#E11D48] font-bold">
                     {photos[activePhoto].label}
                   </p>
-                  <p className="text-[10px] text-zinc-600 font-mono mt-1">Elena Smith • Remote Web Designer & Vendeuse Digital</p>
+                  <p className="text-[10px] text-zinc-600 font-mono mt-1">Elena Smith • Directrice Artistique & Designer Web</p>
                 </div>
               </div>
             </div>
@@ -96,10 +96,10 @@ export const About: React.FC = () => {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4 text-zinc-700 font-light text-base md:text-lg leading-relaxed">
               <p>
-                Je m'appelle <strong className="text-[#0F172A] font-bold">Elena Smith</strong> (22 ans). Je suis spécialisée dans la <span className="text-[#E11D48] font-semibold">Création de Sites Internet (dès 150€)</span>, le <span className="text-[#8B5CF6] font-semibold">Design de Sites Web (UI/UX)</span>, la réalisation d'<span className="text-[#F43F5E] font-semibold">Affiches Publicitaires à 15€ SEULEMENT</span>, ainsi que la vente de <span className="text-[#F59E0B] font-semibold">Templates Web & Ebooks pratiques</span>.
+                Je suis <strong className="text-[#0F172A] font-bold">Elena Smith</strong>, Directrice Artistique & Designer Web. Spécialisée dans la <span className="text-[#E11D48] font-semibold">Création de Sites Internet Sur-Mesure</span>, le <span className="text-[#8B5CF6] font-semibold">Design d'Interfaces UI/UX</span>, la conception d'<span className="text-[#F43F5E] font-semibold">Affiches Publicitaires</span> et la création de <span className="text-[#F59E0B] font-semibold">Templates Web & Ebooks</span>.
               </p>
               <p>
-                Je travaille <strong className="text-[#0F172A] font-bold">100% à distance</strong> avec des clients partout dans le monde. Mon approche allie sensibilité visuelle féminine, rapidité et tarifs ultra-compétitifs pour sublimer vos projets.
+                Je travaille <strong className="text-[#0F172A] font-bold">100% à distance</strong> avec des entreprises et créateurs à l'international. Chaque projet est développé sur-mesure pour refléter l'identité unique de votre entreprise.
               </p>
             </div>
 

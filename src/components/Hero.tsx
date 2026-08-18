@@ -127,16 +127,16 @@ export const Hero: React.FC = () => {
 
       {/* Hero Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 my-auto w-full space-y-12 gpu-layer">
-        {/* Remote Work & Offers Top Callout Banner */}
+        {/* Remote Work Top Callout Banner */}
         <div className="flex flex-wrap items-center gap-3">
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#0F172A] text-white font-mono text-xs font-bold shadow-xl border-2 border-[#E11D48]">
             <Globe className="w-4 h-4 text-[#F43F5E] animate-pulse" />
-            <span>TRAVAIL 100% À DISTANCE — CRÉATION SITES DÈS 150€ !</span>
+            <span>TRAVAIL 100% À DISTANCE — WORLDWIDE</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#E11D48] text-white font-mono text-xs font-bold shadow-lg">
             <Tag className="w-4 h-4" />
-            <span>AFFICHES À 15€ SEULEMENT</span>
+            <span>DEMANDE DE PROJET PAR EMAIL</span>
           </div>
         </div>
 
@@ -147,19 +147,19 @@ export const Hero: React.FC = () => {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 text-[#E11D48] font-mono text-xs font-bold uppercase tracking-widest">
                 <Sparkles className="w-4 h-4 text-[#E11D48]" />
-                <span>DIRECTRICE ARTISTIQUE & CRÉATRICE WEB (22 ANS)</span>
+                <span>DIRECTRICE ARTISTIQUE • DESIGNER & DÉVELOPPEUSE WEB</span>
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight leading-[0.98] text-[#0F172A]">
-                JE CRÉE DES <br />
-                <span className="text-gradient-rose">SITES INTERNET</span> <br />
+                ELENA SMITH <br />
+                <span className="text-gradient-rose">DESIGN & CRÉATION WEB</span> <br />
                 <span className="text-outline hover:text-[#E11D48] transition-colors duration-500">
-                  QUI MARQUENT.
+                  SUR-MESURE.
                 </span>
               </h1>
             </div>
 
             <p className="text-base sm:text-lg text-zinc-700 font-light leading-relaxed max-w-xl">
-              Moi, c'est <strong className="text-[#0F172A] font-bold">Elena Smith</strong>. Spécialisée en <span className="text-[#E11D48] font-semibold">Création de Sites Internet (dès 150€)</span>, <span className="text-[#8B5CF6] font-semibold">Design UI/UX</span>, <span className="text-[#F43F5E] font-semibold">Affiches Publicitaires à 15€ SEULEMENT</span> (proposant également des Templates Web & Ebooks design).
+              Bienvenue sur mon portfolio. Je suis <strong className="text-[#0F172A] font-bold">Elena Smith</strong>, <span className="text-[#E11D48] font-semibold">Directrice Artistique & Designer Web</span>. Spécialisée dans la <span className="text-[#8B5CF6] font-semibold">Création de Sites Internet Sur-Mesure</span>, la conception d'<span className="text-[#F43F5E] font-semibold">Affiches Publicitaires</span>, ainsi que la vente de Templates Web & Ebooks. N'hésitez pas à me contacter par email pour toute demande de projet ou devis.
             </p>
 
             {/* Action Buttons */}
@@ -168,10 +168,10 @@ export const Hero: React.FC = () => {
                 href="#projects"
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                data-cursor="DÉCOUVRIR"
+                data-cursor="PROJETS"
                 className="px-8 py-4 rounded-full bg-[#E11D48] text-white font-display font-extrabold text-sm tracking-wider uppercase hover:bg-[#0F172A] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#E11D48]/30 flex items-center gap-3"
               >
-                <span>Découvrir mes sites</span>
+                <span>Découvrir mes projets</span>
                 <ArrowDownRight className="w-5 h-5" />
               </a>
 
@@ -179,21 +179,21 @@ export const Hero: React.FC = () => {
                 href="#visuals"
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                data-cursor="15€"
+                data-cursor="VISUELS"
                 className="px-8 py-4 rounded-full bg-white text-[#0F172A] border-2 border-zinc-200 font-display font-extrabold text-sm tracking-wider uppercase hover:border-[#E11D48] hover:text-[#E11D48] transition-all flex items-center gap-2 shadow-md"
               >
                 <Tag className="w-4 h-4 text-[#E11D48]" />
-                <span>Affiches (15€)</span>
+                <span>Affiches Publicitaires</span>
               </a>
 
               <a
                 href="#contact"
                 onMouseEnter={() => soundFx.playHover()}
                 onClick={() => soundFx.playClick()}
-                data-cursor="TALK"
+                data-cursor="EMAIL"
                 className="px-6 py-4 rounded-full bg-zinc-100 text-zinc-800 font-display font-bold text-xs tracking-wider uppercase hover:bg-zinc-200 transition-all flex items-center gap-2"
               >
-                <span>Me Contacter</span>
+                <span>Me Contacter par Email</span>
               </a>
             </div>
 
@@ -201,15 +201,15 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap items-center gap-6 pt-4 text-xs font-mono text-zinc-600 border-t border-zinc-200">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E11D48]" />
-                <span>Sites dès 150€</span>
+                <span>Sites Internet Sur-Mesure</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#F43F5E]" />
-                <span>Affiches 15€ SEULEMENT</span>
+                <span>Affiches & Branding Visuel</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#8B5CF6]" />
-                <span>Vendeuse de Templates & Ebooks</span>
+                <span>Templates & Ebooks Design</span>
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ export const Hero: React.FC = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-ping" />
                     <span className="text-xs font-display font-extrabold text-[#0F172A]">Elena Smith</span>
                   </div>
-                  <p className="text-[11px] font-mono text-zinc-600 mt-0.5">Créatrice de Sites & Designer (22 ans)</p>
+                  <p className="text-[11px] font-mono text-zinc-600 mt-0.5">Directrice Artistique & Designer Web</p>
                 </div>
               </div>
 
@@ -240,7 +240,7 @@ export const Hero: React.FC = () => {
               <div className="absolute bottom-4 right-0 w-[68%] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white z-20 transform rotate-6 hover:rotate-0 transition-transform duration-500 group gpu-layer">
                 <img
                   src="/images/elena_asset_8.webp"
-                  alt="Elena Smith — Design Web & Affiches 15€"
+                  alt="Elena Smith — Design Web & Affiches"
                   decoding="async"
                   fetchPriority="high"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -249,7 +249,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#0F172A] text-white rounded-2xl border border-white/20 shadow-lg">
                   <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#F43F5E]">
                     <Star className="w-3.5 h-3.5 fill-current text-[#F43F5E]" />
-                    <span>Affiches 15€ • Templates & Ebooks</span>
+                    <span>Affiches • Templates & Ebooks</span>
                   </div>
                   <p className="text-[10px] font-mono text-zinc-300 mt-0.5">100% À Distance Worldwide</p>
                 </div>
@@ -266,17 +266,17 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 w-full mt-16 border-t border-b border-zinc-200 bg-white/80 backdrop-blur-md py-4 overflow-hidden shadow-xs">
         <div className="flex items-center gap-12 whitespace-nowrap animate-marquee">
           {[
-            'CRÉATION DE SITES INTERNET (DÈS 150€)',
+            'CRÉATION DE SITES INTERNET SUR-MESURE',
             '✦',
-            'AFFICHES PUBLICITAIRES (15€ SEULEMENT)',
+            'CONCEPTION D\'AFFICHES PUBLICITAIRES',
             '✦',
             'VENDEUSE DE TEMPLATES WEB & EBOOKS',
             '✦',
-            'DESIGN DE SITES WEB (UI/UX)',
+            'DIRECTION ARTISTIQUE & DESIGN UI/UX',
             '✦',
             'TRAVAIL 100% À DISTANCE',
             '✦',
-            'DISPONIBLE POUR VOS PROJETS',
+            'CONTACT & DEVIS PAR EMAIL',
             '✦',
           ].map((item, idx) => (
             <span

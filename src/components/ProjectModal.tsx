@@ -63,7 +63,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-[#0F172A]">
                 {project.title}
               </h2>
-              <span className="text-xs font-mono text-zinc-500">{project.year} • Client: {project.client}</span>
+              <span className="text-xs font-mono text-zinc-500 font-bold">Client: {project.client}</span>
             </div>
             <p className="text-lg text-zinc-700 font-light leading-relaxed">
               {project.longDescription}

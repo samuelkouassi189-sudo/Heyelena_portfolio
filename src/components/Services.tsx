@@ -24,10 +24,10 @@ export const Services: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 text-[#E11D48] font-mono text-xs tracking-widest uppercase mb-3 font-bold">
               <span className="w-2 h-2 rounded-full bg-[#E11D48]" />
-              <span>03. SERVICES & TARIFS DÈS 150€</span>
+              <span>03. SERVICES & EXPERTISES SUR-MESURE</span>
             </div>
             <h2 className="text-4xl md:text-7xl font-display font-extrabold text-[#0F172A] tracking-tight">
-              DES OFFRES SUR-MESURE <span className="text-gradient-rose">DÈS 150€</span>
+              DES PRESTATIONS WEB <span className="text-gradient-rose">SUR-MESURE</span>
             </h2>
           </div>
 

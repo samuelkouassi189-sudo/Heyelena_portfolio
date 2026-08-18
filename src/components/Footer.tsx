@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E11D48] text-white text-xs font-mono font-bold">
                 <CreditCard className="w-3.5 h-3.5" />
-                <span>SITES INTERNET DÈS 150€</span>
+                <span>SITES INTERNET SUR-MESURE</span>
               </div>
             </div>
             <h2 className="text-5xl sm:text-7xl lg:text-9xl font-display font-extrabold text-[#0F172A] tracking-tighter">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
               <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-pulse" />
               <span>100% à Distance (Remote)</span>
             </div>
-            <div className="text-zinc-600">Création de site dès 150€</div>
+            <div className="text-zinc-600">Contact & Devis par Email</div>
             <div className="text-zinc-500">Heure locale: {time || '19:23:00'}</div>
           </div>
 
@@ -79,9 +79,9 @@ export const Footer: React.FC = () => {
           <div className="space-y-2">
             <div className="text-[#0F172A] font-extrabold tracking-wider uppercase">MES 3 SPÉCIALITÉS</div>
             <div className="text-zinc-700 space-y-1 font-medium">
-              <p>• Création de Sites Internet (dès 150€)</p>
-              <p>• Design de Sites Internet (UI/UX)</p>
-              <p>• Affiches Publicitaires & Visuels</p>
+              <p>• Création de Sites Internet Sur-Mesure</p>
+              <p>• Design d'Interfaces (UI/UX)</p>
+              <p>• Affiches Publicitaires & Branding</p>
             </div>
           </div>
 

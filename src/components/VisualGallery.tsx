@@ -28,11 +28,11 @@ export const VisualGallery: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E11D48] text-white font-mono text-xs font-bold tracking-widest uppercase mb-3 shadow-md">
               <Tag className="w-4 h-4" />
-              <span>OFFRE SPÉCIALE : 15€ SEULEMENT PAR AFFICHE !</span>
+              <span>SÉLECTION D'AFFICHES PUBLICITAIRES</span>
             </div>
             <h2 className="text-4xl md:text-7xl font-display font-extrabold text-[#0F172A] tracking-tight">
               AFFICHES PUBLICITAIRES <br />
-              <span className="text-gradient-rose">SUR-MESURE À 15€</span>
+              <span className="text-gradient-rose">ET BRANDING VISUEL</span>
             </h2>
           </div>
           <div className="max-w-sm space-y-2">
@@ -41,7 +41,7 @@ export const VisualGallery: React.FC = () => {
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#E11D48] bg-rose-50 px-3 py-1.5 rounded-xl border border-rose-200">
               <CheckCircle2 className="w-4 h-4" />
-              <span>Conception d'affiche personnalisée pour 15€ seulement</span>
+              <span>Conception d'affiche personnalisée par Email</span>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export const VisualGallery: React.FC = () => {
                 setActiveVisual(vis);
               }}
               onMouseEnter={() => soundFx.playHover()}
-              data-cursor="15€"
+              data-cursor="AFFICHE"
               className="group cursor-pointer rounded-3xl overflow-hidden bg-white border border-zinc-200 shadow-xl hover:border-[#E11D48] hover:shadow-2xl transition-all duration-300 p-3 relative gpu-layer"
             >
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-zinc-900">
@@ -68,10 +68,10 @@ export const VisualGallery: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
-                {/* 15€ Price Tag Badge */}
-                <div className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-xl bg-[#E11D48] text-white font-display font-extrabold text-sm shadow-lg border border-white/20 flex items-center gap-1">
+                {/* Sur-Mesure Badge */}
+                <div className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-xl bg-[#E11D48] text-white font-display font-extrabold text-xs shadow-lg border border-white/20 flex items-center gap-1">
                   <Tag className="w-3.5 h-3.5" />
-                  <span>15€</span>
+                  <span>Sur-Mesure</span>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -80,7 +80,7 @@ export const VisualGallery: React.FC = () => {
                   <p className="text-xs text-zinc-300 font-light mt-1">{vis.description}</p>
                   <div className="mt-4 flex items-center gap-2 text-xs font-mono text-white bg-[#E11D48] px-4 py-2 rounded-full w-max shadow-md">
                     <Eye className="w-4 h-4" />
-                    <span>Agrandir l'affiche (15€)</span>
+                    <span>Agrandir l'affiche</span>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export const VisualGallery: React.FC = () => {
                 </div>
                 <div className="text-right">
                   <span className="text-xs font-mono font-bold text-[#E11D48] bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">
-                    15€ SEULEMENT
+                    Sur Devis
                   </span>
                 </div>
               </div>
@@ -124,8 +124,8 @@ export const VisualGallery: React.FC = () => {
                 alt={activeVisual.title}
                 className="max-h-[70vh] w-auto object-contain rounded-2xl border border-white/20 shadow-2xl"
               />
-              <div className="absolute top-4 right-4 px-4 py-2 rounded-2xl bg-[#E11D48] text-white font-display font-extrabold text-lg shadow-xl">
-                15€ SEULEMENT
+              <div className="absolute top-4 right-4 px-4 py-2 rounded-2xl bg-[#E11D48] text-white font-display font-extrabold text-xs shadow-xl">
+                Demande par Email
               </div>
             </div>
 
@@ -139,7 +139,7 @@ export const VisualGallery: React.FC = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E11D48] text-white font-display font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-all shadow-xl mt-2"
               >
                 <ShoppingCart className="w-4 h-4" />
-                <span>Commander votre affiche pour 15€</span>
+                <span>Me contacter pour cette affiche</span>
               </a>
             </div>
           </div>

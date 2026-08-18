@@ -4,14 +4,14 @@ export const servicesData: Service[] = [
   {
     id: 'web-creation',
     number: '01',
-    title: 'Création de Sites Internet (dès 150€)',
-    subtitle: 'Sites Vitrines & Portfolios Sur-Mesure',
-    description: 'Conception et développement de sites internet modernes, fluides et parfaitement optimisés. Des sites vitrines d\'exception accessibles dès 150€ qui renforcent immédiatement votre crédibilité.',
+    title: 'Création de Sites Internet Sur-Mesure',
+    subtitle: 'Sites Vitrines & Portfolios Professionnels',
+    description: 'Conception et développement de sites internet modernes, fluides et parfaitement optimisés. Des sites vitrines et plateformes d\'exception conçus pour valoriser votre marque et captiver votre audience.',
     deliverables: [
-      'Sites internet vitrines dès 150€',
-      'Portfolios professionnels & sites événementiels',
-      'Intégration responsive mobile & ordinateur',
-      'Optimisation de la vitesse et de la fluidité'
+      'Sites internet vitrines & e-commerce sur-mesure',
+      'Portfolios professionnels & sites d\'entreprise',
+      'Intégration responsive mobile, tablette & ordinateur',
+      'Optimisation de la vitesse, du référencement et de la fluidité'
     ],
     iconName: 'Code',
     color: '#E11D48'
@@ -21,7 +21,7 @@ export const servicesData: Service[] = [
     number: '02',
     title: 'Design de Sites Internet (UI/UX)',
     subtitle: 'Direction Artistique Web & Prototypage',
-    description: 'Création de maquettes et design visuel de sites internet. Élaboration de chartes graphiques web élégantes, intuitives et adaptées à l\'identité de votre marque.',
+    description: 'Création de maquettes et design visuel de sites internet. Élaboration de chartes graphiques web élégantes, intuitives et adaptées à l\'identité de votre entreprise.',
     deliverables: [
       'Design d\'interfaces de sites web (Figma)',
       'Wireframes & Maquettes haute fidélité',
@@ -34,14 +34,14 @@ export const servicesData: Service[] = [
   {
     id: 'advertising-posters',
     number: '03',
-    title: 'Affiches Publicitaires (SEULEMENT 15€)',
-    subtitle: 'Campagnes Visuelles Haute Définition à 15€',
-    description: 'Conception d\'affiches publicitaires professionnelles pour SEULEMENT 15€ l\'affiche ! Visuels à fort impact pour cosmétiques, high-tech, mode, restauration, événements et réseaux sociaux.',
+    title: 'Conception d\'Affiches Publicitaires',
+    subtitle: 'Campagnes Visuelles Haute Définition',
+    description: 'Conception d\'affiches publicitaires professionnelles sur-mesure. Visuels à fort impact pour cosmétiques, high-tech, mode, restauration, événements et campagnes digitales.',
     deliverables: [
-      'Affiches publicitaires sur-mesure à 15€ SEULEMENT',
+      'Affiches publicitaires sur-mesure à fort impact',
       'Fichiers HD prêts pour impression & affichage digital',
       'Formats réseaux sociaux (Instagram, Facebook, Ads)',
-      'Livraison ultra-rapide en 24h/48h'
+      'Conception rapide et révisions incluses'
     ],
     iconName: 'Sparkles',
     color: '#F43F5E'
@@ -51,12 +51,12 @@ export const servicesData: Service[] = [
     number: '04',
     title: 'Templates Web & Ebooks Design',
     subtitle: 'Ressources Prêtes à l\'Emploi & Guides Pratiques',
-    description: 'Vente de Templates Web Figma/React prêts à l\'emploi et d\'Ebooks guides pratiques sur le design et la création de site internet pour lancer votre projet en quelques minutes.',
+    description: 'Vente de Templates Web Figma/React prêts à l\'emploi et d\'Ebooks guides pratiques sur le design et la création de site internet pour lancer votre projet rapidement.',
     deliverables: [
       'Templates Figma & React prêts à personnaliser',
       'Ebooks & Guides pas à pas (Web Design & Branding)',
       'Kits de composants UI & packs d\'icônes',
-      'Téléchargement immédiat après achat'
+      'Support & documentation complète'
     ],
     iconName: 'Palette',
     color: '#F59E0B'

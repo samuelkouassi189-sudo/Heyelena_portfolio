@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
     { label: 'Showroom', href: '#showroom' },
     { label: 'À propos', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Affiches (15€)', href: '#visuals' },
+    { label: 'Affiches', href: '#visuals' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
               ELENA SMITH
             </span>
             <span className="text-[10px] font-mono text-zinc-500 tracking-wider">
-              CRÉATRICE & DESIGNER WEB
+              DIRECTRICE ARTISTIQUE & DESIGNER WEB
             </span>
           </div>
         </a>
@@ -82,10 +82,10 @@ export const Navbar: React.FC = () => {
 
         {/* Right Action Area */}
         <div className="flex items-center gap-3">
-          {/* 15€ Poster Special Badge */}
+          {/* Contact Special Badge */}
           <div className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E11D48] text-white text-xs font-mono font-bold shadow-sm">
             <Tag className="w-3.5 h-3.5" />
-            <span>Affiches 15€</span>
+            <span>Sur Devis / Email</span>
           </div>
 
           {/* Sound Toggle */}
@@ -148,10 +148,10 @@ export const Navbar: React.FC = () => {
           <div className="space-y-4 pt-4 border-t border-zinc-200">
             <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-[#E11D48]/10 border border-[#E11D48]/30 text-[#E11D48] text-xs font-mono font-bold w-max">
               <Globe className="w-4 h-4 text-[#E11D48] animate-pulse" />
-              <span>Travail 100% à distance — Affiches à 15€</span>
+              <span>Travail 100% à distance — Contact par Email</span>
             </div>
             <p className="text-xs font-mono text-zinc-500">
-              ELENA SMITH • SITES INTERNET & AFFICHES PUBLICITAIRES (15€)
+              ELENA SMITH • SITES INTERNET & AFFICHES PUBLICITAIRES
             </p>
           </div>
         </div>

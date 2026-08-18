@@ -2,21 +2,20 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
-    id: 'website-car',
-    title: 'Website Car',
-    category: 'Site Internet Automobile & 3D',
-    year: '2024',
-    client: 'Hyperion Motors',
-    role: 'Design de Site & Création Web',
-    description: 'Site internet immersif à 360° dédié aux supercars électriques de luxe.',
-    longDescription: 'Website Car est un site internet d\'exception qui permet de configurer et de personnaliser en ligne des supercars électriques. Avec une expérience 3D en temps réel, un design épuré et des animations fluides au défilement, ce site internet a été récompensé au niveau international.',
+    id: 'portfolio-elena',
+    title: 'Elena Smith — Portfolio',
+    category: 'Portfolio Personnel & Design Web 3D',
+    client: 'Elena Smith Studio',
+    role: 'Design Web, Direction Artistique & Développement',
+    description: 'Portfolio professionnel interactif mettant en valeur la création de sites internet et affiches publicitaires.',
+    longDescription: 'Elena Smith — Portfolio est une vitrine web haut de gamme interactive intégrant une expérience 3D, un showroom dynamique des réalisations et une présentation complète des compétences en design et création numérique.',
     image: '/images/elena_asset_1.webp',
     gallery: [
       '/images/elena_asset_1.webp',
       '/images/elena_asset_2.webp',
       '/images/elena_asset_3.webp'
     ],
-    tags: ['Site Internet 3D', 'Design Web', 'Directeur Artistique', 'UI/UX', 'Automobile'],
+    tags: ['Portfolio', 'Design Web', 'Directeur Artistique', 'UI/UX', 'Interactive 3D'],
     award: 'Awwwards Site of the Day',
     featured: true,
     mockupType: 'desktop',
@@ -29,21 +28,20 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: 'nexa-studio',
-    title: 'Nexa Studio',
-    category: 'Site Vitrine Studio Créatif',
-    year: '2024',
-    client: 'Nexa Studio Collective',
+    id: 'maison-des-chaussures',
+    title: 'Maison des Chaussures',
+    category: 'Site E-Commerce & Boutique de Chaussures',
+    client: 'Maison des Chaussures Paris',
     role: 'Design Web & Direction Artistique',
-    description: 'Site internet de portfolio pour un collectif de designers et créateurs visuels.',
-    longDescription: 'Conçu pour mettre en valeur les travaux d\'un collectif d\'artistes, le site internet Nexa Studio associe un layout asymétrique contemporain, des animations au survol fluides et une typographie haute couture.',
+    description: 'Site internet e-commerce haut de gamme dédié aux chaussures de luxe et créations en cuir.',
+    longDescription: 'Conçu pour sublimer la collection d\'une boutique de chaussures haut de gamme, le site internet Maison des Chaussures associe un layout épuré, des animations produit fluides au survol et une expérience d\'achat hautement ergonomique.',
     image: '/images/elena_asset_8.webp',
     gallery: [
       '/images/elena_asset_8.webp',
       '/images/elena_asset_9.webp',
       '/images/elena_asset_10.webp'
     ],
-    tags: ['Site Vitrine', 'Design de Site', 'Direction Artistique', 'Animations'],
+    tags: ['E-Commerce', 'Boutique Chaussures', 'Direction Artistique', 'UI/UX'],
     award: 'FWA of the Day',
     featured: true,
     mockupType: 'full',
@@ -52,14 +50,13 @@ export const projectsData: Project[] = [
     stats: [
       { label: 'Distinctions', value: '3 Awards' },
       { label: 'Navigation', value: 'Fluidité 60fps' },
-      { label: 'Rendu Visuel', value: '100% Retine' }
+      { label: 'Rendu Visuel', value: '100% Retina' }
     ]
   },
   {
     id: 'baobab-dor',
     title: 'Baobab d\'Or',
     category: 'Site Restaurant Gastronomique & Affiches',
-    year: '2023',
     client: 'Chef Auguste Konan',
     role: 'Design Web & Affiches Publicitaires',
     description: 'Site internet gustatif et affiches publicitaires pour un restaurant étoilé.',
@@ -86,7 +83,6 @@ export const projectsData: Project[] = [
     id: 'cabinet-avocat',
     title: 'Cabinet d\'Avocat',
     category: 'Site Internet Juridique & Prestige',
-    year: '2024',
     client: 'Cabinet D. Kouassi & Associés',
     role: 'Design de Site & Identité Visuelle',
     description: 'Site internet élégant et confidentiel pour cabinet d\'avocats d\'affaires et conseil juridique.',
@@ -113,7 +109,6 @@ export const projectsData: Project[] = [
     id: 'aurea-estates',
     title: 'Aurea Estates',
     category: 'Site Internet Immobilier de Luxe',
-    year: '2023',
     client: 'Aurea Group Genève',
     role: 'Design de Site & Identité Visuelle',
     description: 'Site internet haut de gamme pour la présentation de villas et propriétés d\'exception.',
@@ -139,7 +134,6 @@ export const projectsData: Project[] = [
     id: 'eden-providence',
     title: 'Eden Providence',
     category: 'Site Internet Éducatif & Académie',
-    year: '2024',
     client: 'Fondation Eden Providence',
     role: 'Design de Site & Création Web',
     description: 'Site internet moderne et dynamique pour un établissement d\'enseignement innovant.',

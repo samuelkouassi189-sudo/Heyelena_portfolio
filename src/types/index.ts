@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   category: string;
-  year: string;
+  year?: string;
   client: string;
   role: string;
   description: string;

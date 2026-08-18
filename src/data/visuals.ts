@@ -7,7 +7,7 @@ export const visualsData: VisualAd[] = [
     category: 'Publicité High-Tech & Audio',
     image: '/images/poster_quantum.webp',
     aspectRatio: 'portrait',
-    description: 'Affiche publicitaire True Wireless, son immersif et éclairage néon d\'exception. Tarif : 15€ SEULEMENT.'
+    description: 'Affiche publicitaire True Wireless, son immersif et éclairage néon d\'exception. Disponible sur demande par email.'
   },
   {
     id: 'vis-2',
@@ -15,7 +15,7 @@ export const visualsData: VisualAd[] = [
     category: 'Publicité Cosmétique & Beauté Luxe',
     image: '/images/poster_aurora.webp',
     aspectRatio: 'portrait',
-    description: 'Campagne visuelle haut de gamme "The Glow Within" pour sérums et soins dorés. Tarif : 15€ SEULEMENT.'
+    description: 'Campagne visuelle haut de gamme "The Glow Within" pour sérums et soins dorés. Conception graphique personnalisée.'
   },
   {
     id: 'vis-3',
@@ -23,7 +23,7 @@ export const visualsData: VisualAd[] = [
     category: 'Affiche Voyage & Resort Luxe',
     image: '/images/poster_evasion.webp',
     aspectRatio: 'portrait',
-    description: 'Visuel touristique prestige pour destination paradisiaque en Polynésie française. Tarif : 15€ SEULEMENT.'
+    description: 'Visuel touristique prestige pour destination paradisiaque en Polynésie française. Réalisations sur-mesure.'
   },
   {
     id: 'vis-4',
@@ -31,7 +31,7 @@ export const visualsData: VisualAd[] = [
     category: 'Publicité Soins Bio & Nature',
     image: '/images/poster_naturesglow.webp',
     aspectRatio: 'portrait',
-    description: 'Création graphique "Radiance, Naturally" pour gamme de soins vegans certifiés. Tarif : 15€ SEULEMENT.'
+    description: 'Création graphique "Radiance, Naturally" pour gamme de soins vegans certifiés. Visuel haute définition.'
   },
   {
     id: 'vis-5',
@@ -39,6 +39,6 @@ export const visualsData: VisualAd[] = [
     category: 'Affiche Publicitaire Audio Luxe',
     image: '/images/poster_aurum.webp',
     aspectRatio: 'portrait',
-    description: 'Visuel d\'affichage "The Sound of Sophistication" pour casques audio premium. Tarif : 15€ SEULEMENT.'
+    description: 'Visuel d\'affichage "The Sound of Sophistication" pour casques audio premium. Direction artistique dédiée.'
   }
 ];

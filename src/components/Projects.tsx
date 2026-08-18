@@ -121,7 +121,7 @@ export const Projects: React.FC = () => {
               <div className={`space-y-4 pt-6 ${idx === 0 ? 'lg:col-span-5 lg:pt-0' : ''}`}>
                 <div className="flex items-center justify-between text-xs font-mono text-zinc-500">
                   <span className="text-[#E11D48] font-bold">{project.category}</span>
-                  <span>{project.year}</span>
+                  <span className="text-zinc-400 font-bold">{project.client}</span>
                 </div>
 
                 <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-[#0F172A] group-hover:text-[#E11D48] transition-colors flex items-center justify-between">
