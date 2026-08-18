@@ -7,6 +7,7 @@ export const CustomCursor: React.FC = () => {
 
   const ringRef = useRef<HTMLDivElement | null>(null);
   const dotRef = useRef<HTMLDivElement | null>(null);
+  const visibleRef = useRef(false);
 
   useEffect(() => {
     let animId: number;
@@ -14,15 +15,19 @@ export const CustomCursor: React.FC = () => {
     let mouseY = -100;
     let ringX = -100;
     let ringY = -100;
+    let currentHovered = false;
+    let currentText = '';
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (!isVisible) setIsVisible(true);
+      if (!visibleRef.current) {
+        visibleRef.current = true;
+        setIsVisible(true);
+      }
     };
 
     const updatePosition = () => {
-      // Smooth lerp for ring movement
       ringX += (mouseX - ringX) * 0.25;
       ringY += (mouseY - ringY) * 0.25;
 
@@ -42,16 +47,25 @@ export const CustomCursor: React.FC = () => {
 
       const interactive = target.closest('a, button, [data-cursor], input, textarea');
       if (interactive) {
-        setIsHovered(true);
-        const textAttr = interactive.getAttribute('data-cursor');
-        setCursorText(textAttr || '');
+        const textAttr = interactive.getAttribute('data-cursor') || '';
+        if (!currentHovered || currentText !== textAttr) {
+          currentHovered = true;
+          currentText = textAttr;
+          setIsHovered(true);
+          setCursorText(textAttr);
+        }
       } else {
-        setIsHovered(false);
-        setCursorText('');
+        if (currentHovered) {
+          currentHovered = false;
+          currentText = '';
+          setIsHovered(false);
+          setCursorText('');
+        }
       }
     };
 
     const handleMouseLeave = () => {
+      visibleRef.current = false;
       setIsVisible(false);
     };
 
@@ -67,12 +81,14 @@ export const CustomCursor: React.FC = () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animId);
     };
-  }, [isVisible]);
-
-  if (!isVisible) return null;
+  }, []);
 
   return (
-    <div className="hidden lg:block pointer-events-none fixed inset-0 z-[9999]">
+    <div
+      className={`hidden lg:block pointer-events-none fixed inset-0 z-[9999] transition-opacity duration-300 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       {/* Outer Ring */}
       <div
         ref={ringRef}

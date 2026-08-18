@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, Sparkles, X, ShoppingCart, Tag, CheckCircle2 } from 'lucide-react';
 import { visualsData } from '../data/visuals';
 import { VisualAd } from '../types';
@@ -6,6 +6,19 @@ import { soundFx } from '../utils/sound';
 
 export const VisualGallery: React.FC = () => {
   const [activeVisual, setActiveVisual] = useState<VisualAd | null>(null);
+
+  // Lock body scroll and pause Lenis smooth scroll while lightbox modal is active
+  useEffect(() => {
+    if (!activeVisual) return;
+
+    document.body.style.overflow = 'hidden';
+    (window as any).lenis?.stop();
+
+    return () => {
+      document.body.style.overflow = '';
+      (window as any).lenis?.start();
+    };
+  }, [activeVisual]);
 
   return (
     <section id="visuals" className="py-24 relative bg-[#FAFAFD] bg-noise border-t border-zinc-200">
@@ -50,6 +63,8 @@ export const VisualGallery: React.FC = () => {
                 <img
                   src={vis.image}
                   alt={vis.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

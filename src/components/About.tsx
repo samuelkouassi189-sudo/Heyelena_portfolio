@@ -6,10 +6,10 @@ export const About: React.FC = () => {
   const [activePhoto, setActivePhoto] = useState(0);
 
   const photos = [
-    { url: '/images/elena_asset_1.jpeg', label: 'Elena Smith — Studio & Remote Work' },
-    { url: '/images/elena_asset_8.jpeg', label: 'Design de Sites Web & UI/UX' },
-    { url: '/images/elena_asset_11.jpeg', label: 'Conception d\'Affiches Publicitaires (15€)' },
-    { url: '/images/elena_asset_4.jpeg', label: 'Vente de Templates Web & Ebooks' },
+    { url: '/images/elena_asset_1.webp', label: 'Elena Smith — Studio & Remote Work' },
+    { url: '/images/elena_asset_8.webp', label: 'Design de Sites Web & UI/UX' },
+    { url: '/images/elena_asset_11.webp', label: 'Conception d\'Affiches Publicitaires (15€)' },
+    { url: '/images/elena_asset_4.webp', label: 'Vente de Templates Web & Ebooks' },
   ];
 
   const skills = [
@@ -56,6 +56,8 @@ export const About: React.FC = () => {
                 <img
                   src={photos[activePhoto].url}
                   alt={photos[activePhoto].label}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
@@ -84,7 +86,7 @@ export const About: React.FC = () => {
                     activePhoto === idx ? 'border-[#E11D48] scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={p.url} alt="" className="w-full h-full object-cover" />
+                  <img src={p.url} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

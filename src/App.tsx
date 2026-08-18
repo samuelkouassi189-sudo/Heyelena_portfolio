@@ -15,27 +15,34 @@ import { Footer } from './components/Footer';
 export const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
-  // Initialize Lenis Smooth Scroll
+  // Initialize Lenis Smooth Scroll with proper RAF management & window attachment
   useEffect(() => {
     if (loading) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.5,
     });
 
+    (window as any).lenis = lenis;
+
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, [loading]);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, ExternalLink, Award, CheckCircle2 } from 'lucide-react';
 import { Project } from '../types';
 import { soundFx } from '../utils/sound';
@@ -9,6 +9,19 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  // Lock body scroll and pause Lenis smooth scroll while modal is active
+  useEffect(() => {
+    if (!project) return;
+
+    document.body.style.overflow = 'hidden';
+    (window as any).lenis?.stop();
+
+    return () => {
+      document.body.style.overflow = '';
+      (window as any).lenis?.start();
+    };
+  }, [project]);
+
   if (!project) return null;
 
   return (
@@ -71,7 +84,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Main Showcase Image */}
           <div className="relative rounded-2xl overflow-hidden border border-zinc-200 aspect-video shadow-lg">
-            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+            <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           </div>
 
           {/* Project Details Specs & Roles */}
@@ -113,7 +126,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="grid sm:grid-cols-3 gap-4">
               {project.gallery.map((imgUrl, idx) => (
                 <div key={idx} className="rounded-xl overflow-hidden border border-zinc-200 aspect-4/3 shadow-sm">
-                  <img src={imgUrl} alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  <img src={imgUrl} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               ))}
             </div>

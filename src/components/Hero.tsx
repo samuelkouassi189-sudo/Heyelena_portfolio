@@ -5,7 +5,7 @@ import { soundFx } from '../utils/sound';
 export const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // Lightweight GPU-Optimized Canvas Background
+  // Lightweight GPU-Optimized Canvas Background with IntersectionObserver pausing
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -13,8 +13,21 @@ export const Hero: React.FC = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
+    let isVisible = true;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) {
+          render();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
 
     const handleResize = () => {
       if (!canvas) return;
@@ -23,15 +36,15 @@ export const Hero: React.FC = () => {
     };
     window.addEventListener('resize', handleResize, { passive: true });
 
-    const mouse = { x: width / 2, y: height / 2, radius: 200 };
+    const mouse = { x: width / 2, y: height / 2 };
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // Lightweight 35 particles max for maximum fps
-    const particlesCount = Math.min(35, Math.floor(width / 35));
+    // Lightweight 25 particles max for maximum fps
+    const particlesCount = Math.min(25, Math.floor(width / 40));
     const particles: { x: number; y: number; vx: number; vy: number; radius: number; color: string }[] = [];
 
     const colors = ['#E11D48', '#8B5CF6', '#F43F5E', '#F59E0B'];
@@ -39,14 +52,19 @@ export const Hero: React.FC = () => {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
         radius: Math.random() * 2 + 1,
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
 
     const render = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
       const radialGradient = ctx.createRadialGradient(
@@ -57,8 +75,8 @@ export const Hero: React.FC = () => {
         mouse.y,
         400
       );
-      radialGradient.addColorStop(0, 'rgba(225, 29, 72, 0.07)');
-      radialGradient.addColorStop(0.6, 'rgba(139, 92, 246, 0.03)');
+      radialGradient.addColorStop(0, 'rgba(225, 29, 72, 0.06)');
+      radialGradient.addColorStop(0.6, 'rgba(139, 92, 246, 0.02)');
       radialGradient.addColorStop(1, 'transparent');
       ctx.fillStyle = radialGradient;
       ctx.fillRect(0, 0, width, height);
@@ -74,18 +92,16 @@ export const Hero: React.FC = () => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 6;
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const distance = Math.sqrt((p.x - p2.x) ** 2 + (p.y - p2.y) ** 2);
-          if (distance < 130) {
+          if (distance < 120) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(225, 29, 72, ${0.1 * (1 - distance / 130)})`;
+            ctx.strokeStyle = `rgba(225, 29, 72, ${0.08 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -98,9 +114,10 @@ export const Hero: React.FC = () => {
     render();
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -203,8 +220,10 @@ export const Hero: React.FC = () => {
               {/* Photo 1: Main Large Frame */}
               <div className="absolute top-0 left-0 w-[82%] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white z-10 transform -rotate-2 hover:rotate-0 transition-transform duration-500 group gpu-layer">
                 <img
-                  src="/images/elena_asset_1.jpeg"
+                  src="/images/elena_asset_1.webp"
                   alt="Elena Smith — Directrice Artistique & Créatrice Web"
+                  decoding="async"
+                  fetchPriority="high"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
@@ -220,8 +239,10 @@ export const Hero: React.FC = () => {
               {/* Photo 2: Secondary Overlapping Frame */}
               <div className="absolute bottom-4 right-0 w-[68%] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white z-20 transform rotate-6 hover:rotate-0 transition-transform duration-500 group gpu-layer">
                 <img
-                  src="/images/elena_asset_8.jpeg"
+                  src="/images/elena_asset_8.webp"
                   alt="Elena Smith — Design Web & Affiches 15€"
+                  decoding="async"
+                  fetchPriority="high"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
