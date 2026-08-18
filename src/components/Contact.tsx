@@ -28,13 +28,24 @@ export const Contact: React.FC = () => {
     e.preventDefault();
     soundFx.playClick();
 
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#E11D48', '#8B5CF6', '#F43F5E'],
-    });
+    try {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#E11D48', '#8B5CF6', '#F43F5E'],
+      });
+    } catch {
+      // Ignore confetti errors if any
+    }
 
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+      `[Projet Elena Smith Studio] ${formData.service} - ${formData.name}`
+    )}&body=${encodeURIComponent(
+      `Nom & Prénom: ${formData.name}\nEmail: ${formData.email}\nPrestation: ${formData.service}\nType de projet: ${formData.budget}\n\nDescription du projet:\n${formData.message}`
+    )}`;
+
+    window.open(mailtoUrl, '_blank');
     setSubmitted(true);
   };
 

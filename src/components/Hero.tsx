@@ -123,7 +123,21 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex flex-col justify-between overflow-hidden bg-[#FAFAFD] bg-noise">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
+      {/* Background Ambient Video Loop with Particle Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/elena_asset_1.webp"
+          className="absolute inset-0 w-full h-full object-cover opacity-25 filter blur-[1px] scale-105"
+        >
+          <source src="https://cdn.coverr.co/videos/coverr-abstract-glowing-lines-4886/1080p.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFD]/90 via-[#FAFAFD]/75 to-[#FAFAFD]" />
+        <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
+      </div>
 
       {/* Hero Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 my-auto w-full space-y-12 gpu-layer">
