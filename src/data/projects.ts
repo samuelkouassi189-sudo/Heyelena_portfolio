@@ -20,6 +20,8 @@ export const projectsData: Project[] = [
     award: 'Awwwards Site of the Day',
     featured: true,
     mockupType: 'desktop',
+    liveUrl: 'https://fancy-frangipane-437d39.netlify.app/',
+    youtubeId: 'G7iko5BQht8',
     stats: [
       { label: 'Temps sur le site', value: '4m 32s' },
       { label: 'Taux de conversion', value: '+140%' },
@@ -45,35 +47,12 @@ export const projectsData: Project[] = [
     award: 'FWA of the Day',
     featured: true,
     mockupType: 'full',
+    liveUrl: 'https://nexu-mocha.vercel.app/',
+    youtubeId: 'OcRSxR-NQcc',
     stats: [
       { label: 'Distinctions', value: '3 Awards' },
       { label: 'Navigation', value: 'Fluidité 60fps' },
       { label: 'Rendu Visuel', value: '100% Retine' }
-    ]
-  },
-  {
-    id: 'aurea-estates',
-    title: 'Aurea Estates',
-    category: 'Site Internet Immobilier de Luxe',
-    year: '2023',
-    client: 'Aurea Group Genève',
-    role: 'Design de Site & Identité Visuelle',
-    description: 'Site internet haut de gamme pour la présentation de villas et propriétés d\'exception.',
-    longDescription: 'Aurea Estates est un site internet immobilier conçu comme une revue de luxe. Il propose des visites virtuelles immersives, une typographie élégante et une structure claire facilitant la prise de contact pour les biens d\'exception.',
-    image: '/images/elena_asset_11.webp',
-    gallery: [
-      '/images/elena_asset_11.webp',
-      '/images/elena_asset_12.webp',
-      '/images/elena_asset_13.webp'
-    ],
-    tags: ['Site Immobilier', 'Design de Site', 'UI/UX', 'Luxe'],
-    award: 'CSSDA Best UI',
-    featured: true,
-    mockupType: 'desktop',
-    stats: [
-      { label: 'Projets présentés', value: '$45M+' },
-      { label: 'Visiteurs uniques / mois', value: '85K' },
-      { label: 'Satisfaction Client', value: '100%' }
     ]
   },
   {
@@ -95,10 +74,65 @@ export const projectsData: Project[] = [
     award: 'Awwwards Developer Award',
     featured: true,
     mockupType: 'full',
+    liveUrl: 'https://baobab-d-or.vercel.app/',
+    youtubeId: 'ddYTvE5uZYA',
     stats: [
       { label: 'Réservations via le site', value: '92%' },
       { label: 'Avis client', value: '4.9/5' },
       { label: 'Taux de clics', value: '+180%' }
+    ]
+  },
+  {
+    id: 'cabinet-avocat',
+    title: 'Cabinet d\'Avocat',
+    category: 'Site Internet Juridique & Prestige',
+    year: '2024',
+    client: 'Cabinet D. Kouassi & Associés',
+    role: 'Design de Site & Identité Visuelle',
+    description: 'Site internet élégant et confidentiel pour cabinet d\'avocats d\'affaires et conseil juridique.',
+    longDescription: 'Plateforme sur-mesure développée pour un cabinet d\'avocats de prestige, offrant une prise de rendez-vous fluide, une présentation claire des expertises juridiques et une esthétique haut de gamme.',
+    image: '/images/elena_asset_12.webp',
+    gallery: [
+      '/images/elena_asset_12.webp',
+      '/images/elena_asset_13.webp',
+      '/images/elena_asset_11.webp'
+    ],
+    tags: ['Site Vitrine', 'Cabinet d\'Avocat', 'UI/UX', 'Juridique'],
+    award: 'Web Design Award',
+    featured: true,
+    mockupType: 'desktop',
+    liveUrl: 'https://cabinet-d-avocat-eight.vercel.app/',
+    youtubeId: 'LdoppDg_-fU',
+    stats: [
+      { label: 'Temps moyen', value: '3m 45s' },
+      { label: 'Ergonomie', value: '100%' },
+      { label: 'Prises RDV', value: '+165%' }
+    ]
+  },
+  {
+    id: 'aurea-estates',
+    title: 'Aurea Estates',
+    category: 'Site Internet Immobilier de Luxe',
+    year: '2023',
+    client: 'Aurea Group Genève',
+    role: 'Design de Site & Identité Visuelle',
+    description: 'Site internet haut de gamme pour la présentation de villas et propriétés d\'exception.',
+    longDescription: 'Aurea Estates est un site internet immobilier conçu comme une revue de luxe. Il propose des visites virtuelles immersives, une typographie élégante et une structure claire facilitant la prise de contact pour les biens d\'exception.',
+    image: '/images/elena_asset_11.webp',
+    gallery: [
+      '/images/elena_asset_11.webp',
+      '/images/elena_asset_12.webp',
+      '/images/elena_asset_13.webp'
+    ],
+    tags: ['Site Immobilier', 'Design de Site', 'UI/UX', 'Luxe'],
+    award: 'CSSDA Best UI',
+    featured: true,
+    mockupType: 'desktop',
+    liveUrl: 'https://aurea-estates-demo.vercel.app/',
+    stats: [
+      { label: 'Projets présentés', value: '$45M+' },
+      { label: 'Visiteurs uniques / mois', value: '85K' },
+      { label: 'Satisfaction Client', value: '100%' }
     ]
   },
   {
@@ -120,6 +154,7 @@ export const projectsData: Project[] = [
     award: 'CSSDA Special Mention',
     featured: true,
     mockupType: 'desktop',
+    liveUrl: 'https://eden-providence-demo.vercel.app/',
     stats: [
       { label: 'Demandes reçues', value: '+210%' },
       { label: 'Score d\'Ergonomie', value: '99.4%' },

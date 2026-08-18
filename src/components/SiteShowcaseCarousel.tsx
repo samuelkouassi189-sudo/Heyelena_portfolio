@@ -110,11 +110,24 @@ export const SiteShowcaseCarousel: React.FC<SiteShowcaseCarouselProps> = ({ onSe
               </div>
 
               {/* URL Address Bar */}
-              <div className="flex-1 max-w-xl mx-auto bg-white border border-zinc-300 rounded-full px-4 py-1.5 flex items-center gap-2 text-xs font-mono text-zinc-700 shadow-xs">
+              <a
+                href={currentProject.liveUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  soundFx.playClick();
+                  if (currentProject.liveUrl) {
+                    window.open(currentProject.liveUrl, '_blank');
+                  }
+                }}
+                className="flex-1 max-w-xl mx-auto bg-white border border-zinc-300 rounded-full px-4 py-1.5 flex items-center gap-2 text-xs font-mono text-zinc-700 hover:text-[#E11D48] hover:border-[#E11D48] transition-all shadow-xs group/url"
+              >
                 <Lock className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span className="truncate">https://{currentProject.id}.elenasmith.com</span>
-                <span className="ml-auto text-[10px] text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded font-bold">SSL Secure</span>
-              </div>
+                <span className="truncate font-bold">{currentProject.liveUrl || `https://${currentProject.id}.elenasmith.com`}</span>
+                <span className="ml-auto text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-200 group-hover/url:bg-[#E11D48] group-hover/url:text-white transition-colors">
+                  Ouvrir le site ↗
+                </span>
+              </a>
 
               {/* Play Pause Controls */}
               <button
@@ -126,22 +139,42 @@ export const SiteShowcaseCarousel: React.FC<SiteShowcaseCarouselProps> = ({ onSe
               </button>
             </div>
 
-            {/* Browser Main Canvas Image Preview */}
-            <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden bg-zinc-900 group">
-              <img
-                key={currentProject.id}
-                src={currentProject.image}
-                alt={currentProject.title}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            {/* Browser Main Canvas Video/Image Showcase */}
+            <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden bg-zinc-950 group">
+              {currentProject.youtubeId ? (
+                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                  <iframe
+                    key={currentProject.id}
+                    src={`https://www.youtube-nocookie.com/embed/${currentProject.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${currentProject.youtubeId}&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1`}
+                    title={currentProject.title}
+                    className="w-full h-full object-cover scale-125 border-0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                  />
+                </div>
+              ) : (
+                <img
+                  key={currentProject.id}
+                  src={currentProject.image}
+                  alt={currentProject.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              )}
 
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-85 pointer-events-none" />
+
+              {/* Top Badge: Looping Video Indicator */}
+              {currentProject.youtubeId && (
+                <div className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold flex items-center gap-2 shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+                  <span>DÉMO VIDÉO EN BOUCLE</span>
+                </div>
+              )}
 
               {/* Bottom Info Floating Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 z-10">
                 <div className="space-y-2 max-w-lg">
                   <span className="px-3 py-1 rounded-full bg-[#E11D48] text-white text-xs font-mono font-bold">
                     {currentProject.category}
@@ -154,17 +187,32 @@ export const SiteShowcaseCarousel: React.FC<SiteShowcaseCarouselProps> = ({ onSe
                   </p>
                 </div>
 
-                <button
-                  onClick={() => {
-                    soundFx.playSwoosh();
-                    onSelectProject(currentProject);
-                  }}
-                  onMouseEnter={() => soundFx.playHover()}
-                  className="px-6 py-3.5 rounded-full bg-white text-[#0F172A] font-display font-extrabold text-xs uppercase tracking-wider hover:bg-[#E11D48] hover:text-white transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2 shrink-0"
-                >
-                  <span>Explorer le concept</span>
-                  <ExternalLink className="w-4 h-4" />
-                </button>
+                <div className="flex flex-wrap items-center gap-3 shrink-0">
+                  {currentProject.liveUrl && (
+                    <a
+                      href={currentProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => soundFx.playClick()}
+                      onMouseEnter={() => soundFx.playHover()}
+                      className="px-6 py-3.5 rounded-full bg-[#E11D48] text-white font-display font-extrabold text-xs uppercase tracking-wider hover:bg-white hover:text-[#0F172A] transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2"
+                    >
+                      <span>Lancer la Démo Live</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+
+                  <button
+                    onClick={() => {
+                      soundFx.playSwoosh();
+                      onSelectProject(currentProject);
+                    }}
+                    onMouseEnter={() => soundFx.playHover()}
+                    className="px-6 py-3.5 rounded-full bg-white/90 backdrop-blur-md text-[#0F172A] font-display font-extrabold text-xs uppercase tracking-wider hover:bg-white hover:text-[#E11D48] transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2"
+                  >
+                    <span>Détails & Specs</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -82,9 +82,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           )}
 
-          {/* Main Showcase Image */}
-          <div className="relative rounded-2xl overflow-hidden border border-zinc-200 aspect-video shadow-lg">
-            <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+          {/* Main Showcase Video / Image */}
+          <div className="relative rounded-2xl overflow-hidden border border-zinc-200 aspect-video shadow-lg bg-zinc-950">
+            {project.youtubeId ? (
+              <div className="relative w-full h-full">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=0&modestbranding=1&rel=0&playsinline=1`}
+                  title={project.title}
+                  className="w-full h-full object-cover scale-105 border-0"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                />
+                <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold shadow-md">
+                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+                  <span>DÉMO VIDÉO EN BOUCLE</span>
+                </div>
+              </div>
+            ) : (
+              <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            )}
           </div>
 
           {/* Project Details Specs & Roles */}
@@ -133,16 +148,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Bottom Live Preview CTA */}
-          <div className="flex justify-end pt-4 border-t border-zinc-200">
+          <div className="flex justify-between items-center pt-4 border-t border-zinc-200">
+            {project.liveUrl && (
+              <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200 font-bold hidden sm:inline-block">
+                ✓ Lien Live Vérifié : {project.liveUrl}
+              </span>
+            )}
             <a
-              href="#"
+              href={project.liveUrl || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={(e) => {
-                e.preventDefault();
                 soundFx.playClick();
-                alert(`Démonstration en direct de ${project.title} initialisée !`);
+                if (project.liveUrl) {
+                  window.open(project.liveUrl, '_blank');
+                }
               }}
               onMouseEnter={() => soundFx.playHover()}
-              className="px-8 py-4 rounded-full bg-[#7C3AED] text-white font-display font-extrabold text-sm tracking-wider uppercase hover:bg-[#0F172A] transition-colors flex items-center gap-3 shadow-lg"
+              className="ml-auto px-8 py-4 rounded-full bg-[#E11D48] text-white font-display font-extrabold text-sm tracking-wider uppercase hover:bg-[#0F172A] transition-colors flex items-center gap-3 shadow-lg"
             >
               <span>Lancer la Démo Live</span>
               <ExternalLink className="w-4 h-4" />

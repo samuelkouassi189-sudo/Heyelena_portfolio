@@ -74,24 +74,43 @@ export const Projects: React.FC = () => {
                 idx === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-12 lg:gap-8 items-center' : ''
               }`}
             >
-              {/* Image Preview Container */}
+              {/* Image / Video Preview Container */}
               <div
-                className={`relative rounded-2xl overflow-hidden aspect-video bg-zinc-900 ${
+                className={`relative rounded-2xl overflow-hidden aspect-video bg-zinc-950 ${
                   idx === 0 ? 'lg:col-span-7 h-full min-h-[300px]' : ''
                 }`}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                {project.youtubeId ? (
+                  <div className="absolute inset-0 w-full h-full pointer-events-none">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=0&modestbranding=1&rel=0&playsinline=1`}
+                      title={project.title}
+                      className="w-full h-full object-cover scale-125 border-0"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
+
+                {/* Video Badge */}
+                {project.youtubeId && (
+                  <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold shadow-md">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+                    <span>VIDÉO EN BOUCLE</span>
+                  </div>
+                )}
 
                 {/* Award Badge Top Right */}
                 {project.award && (
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200 text-[#E11D48] text-[11px] font-mono font-bold shadow-md">
+                  <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200 text-[#E11D48] text-[11px] font-mono font-bold shadow-md">
                     <Award className="w-3.5 h-3.5" />
                     <span>{project.award}</span>
                   </div>
@@ -107,7 +126,19 @@ export const Projects: React.FC = () => {
 
                 <h3 className="text-2xl sm:text-4xl font-display font-extrabold text-[#0F172A] group-hover:text-[#E11D48] transition-colors flex items-center justify-between">
                   <span>{project.title}</span>
-                  <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-[#0F172A] group-hover:bg-[#E11D48] group-hover:text-white transition-all shadow-xs">
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      soundFx.playClick();
+                      if (project.liveUrl) {
+                        window.open(project.liveUrl, '_blank');
+                      } else {
+                        setSelectedProject(project);
+                      }
+                    }}
+                    title="Lancer le site internet"
+                    className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-[#0F172A] group-hover:bg-[#E11D48] group-hover:text-white transition-all shadow-xs"
+                  >
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </h3>
@@ -116,16 +147,32 @@ export const Projects: React.FC = () => {
                   {project.description}
                 </p>
 
-                {/* Tags list */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-[11px] font-mono text-zinc-700"
+                {/* Action Buttons & Tags */}
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-[11px] font-mono text-zinc-700"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {project.liveUrl && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        soundFx.playClick();
+                        window.open(project.liveUrl, '_blank');
+                      }}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#E11D48] text-white text-xs font-mono font-bold hover:bg-[#0F172A] transition-colors shadow-sm"
                     >
-                      #{tag}
-                    </span>
-                  ))}
+                      <span>Lancer le Site</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

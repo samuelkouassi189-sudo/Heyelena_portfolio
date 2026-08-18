@@ -11,6 +11,8 @@ export interface Project {
   gallery: string[];
   tags: string[];
   link?: string;
+  liveUrl?: string;
+  youtubeId?: string;
   award?: string;
   featured?: boolean;
   mockupType?: 'desktop' | 'mobile' | 'full';
