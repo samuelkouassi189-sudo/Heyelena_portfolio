@@ -2,20 +2,20 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
-    id: 'portfolio-elena',
-    title: 'Elena Smith — Portfolio',
-    category: 'Portfolio Personnel & Design Web 3D',
-    client: 'Elena Smith Studio',
+    id: 'portfolio-medical',
+    title: 'Portfolio Médical',
+    category: 'Site Internet & Portfolio Médical',
+    client: 'Cabinet Médical & Santé',
     role: 'Design Web, Direction Artistique & Développement',
-    description: 'Portfolio professionnel interactif mettant en valeur la création de sites internet et affiches publicitaires.',
-    longDescription: 'Elena Smith — Portfolio est une vitrine web haut de gamme interactive intégrant une expérience 3D, un showroom dynamique des réalisations et une présentation complète des compétences en design et création numérique.',
+    description: 'Site internet et portfolio médical d\'excellence avec présentation des soins et des spécialités.',
+    longDescription: 'Conçu spécifiquement pour le domaine médical et de la santé, le site internet Portfolio Médical associe un design épuré rassurant, une clarté optimale des informations pour les patients et un module moderne de présentation des soins.',
     image: '/images/elena_asset_1.webp',
     gallery: [
       '/images/elena_asset_1.webp',
       '/images/elena_asset_2.webp',
       '/images/elena_asset_3.webp'
     ],
-    tags: ['Portfolio', 'Design Web', 'Directeur Artistique', 'UI/UX', 'Interactive 3D'],
+    tags: ['Portfolio Médical', 'Site Médical', 'Santé & Médecine', 'UI/UX'],
     award: 'Awwwards Site of the Day',
     featured: true,
     mockupType: 'desktop',
